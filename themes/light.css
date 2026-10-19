@@ -1,0 +1,44 @@
+:root {
+  --font-body: 'Inter', -apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --font-heading: var(--font-body);
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'DejaVu Sans Mono', Consolas, monospace;
+
+  --bg: #ffffff;
+  --fg: #1f2328;
+  --muted: #6b7280;
+  --border: #d8dee4;
+  --accent: #6366f1;
+  --cover-from: #4f46e5;
+  --cover-to: #db2777;
+  --cover-fg: #ffffff;
+
+  --h1: #312e81;
+  --h2: #4338ca;
+  --h3: #0e7490;
+  --h4: #be185d;
+  --strong: #111827;
+  --link: #2563eb;
+  --math: #1e3a8a;
+
+  --mark-bg: #fde68a;
+  --mark-fg: #1f2328;
+  --code-bg: #f6f8fa;
+  --code-inline-bg: #eef2ff;
+  --code-inline-fg: #c026d3;
+  --quote-bg: #f5f7ff;
+  --quote-fg: #374151;
+  --th-bg: #4f46e5;
+  --th-fg: #ffffff;
+  --row-alt: #f8fafc;
+  --toc-bg: #f8faff;
+
+  --red: #dc2626;
+  --orange: #ea580c;
+  --yellow: #ca8a04;
+  --green: #16a34a;
+  --teal: #0d9488;
+  --blue: #2563eb;
+  --purple: #9333ea;
+  --pink: #db2777;
+  --gray: #6b7280;
+}

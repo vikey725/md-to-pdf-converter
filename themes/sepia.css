@@ -1,0 +1,44 @@
+:root {
+  --font-body: 'Charter', 'Georgia', 'DejaVu Serif', serif;
+  --font-heading: 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'DejaVu Sans Mono', Consolas, monospace;
+
+  --bg: #f6efe0;
+  --fg: #3b3024;
+  --muted: #8a7a5c;
+  --border: #d9c9a8;
+  --accent: #b45309;
+  --cover-from: #7c2d12;
+  --cover-to: #b45309;
+  --cover-fg: #fff7ed;
+
+  --h1: #7c2d12;
+  --h2: #9a3412;
+  --h3: #155e75;
+  --h4: #6b21a8;
+  --strong: #2a1f14;
+  --link: #9a3412;
+  --math: #5b2a0e;
+
+  --mark-bg: #f5d58a;
+  --mark-fg: #3b3024;
+  --code-bg: #efe5cf;
+  --code-inline-bg: #ecdfc2;
+  --code-inline-fg: #9f1239;
+  --quote-bg: #efe6d2;
+  --quote-fg: #5b4a35;
+  --th-bg: #9a3412;
+  --th-fg: #fff7ed;
+  --row-alt: #f1e8d5;
+  --toc-bg: #f1e7d2;
+
+  --red: #b91c1c;
+  --orange: #c2410c;
+  --yellow: #a16207;
+  --green: #3f6212;
+  --teal: #0f766e;
+  --blue: #1d4ed8;
+  --purple: #7e22ce;
+  --pink: #be185d;
+  --gray: #78716c;
+}

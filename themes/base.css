@@ -1,0 +1,172 @@
+/* Shared layout and print rules. Colors come from the theme file's variables. */
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.markdown-body {
+  font: 11pt/1.6 var(--font-body);
+  overflow-wrap: break-word;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  line-height: 1.25;
+  margin: 1.4em 0 0.6em;
+  break-after: avoid;
+}
+h1 { font-size: 2em; color: var(--h1); padding-bottom: 0.3em; border-bottom: 3px solid var(--accent); }
+h2 { font-size: 1.5em; color: var(--h2); padding-bottom: 0.25em; border-bottom: 1px solid var(--border); }
+h3 { font-size: 1.25em; color: var(--h3); }
+h4 { font-size: 1.05em; color: var(--h4); }
+h5, h6 { font-size: 1em; color: var(--muted); }
+.markdown-body > :first-child { margin-top: 0; }
+
+p, ul, ol, table, pre, blockquote, .mermaid-diagram, .katex-display { margin: 0 0 1em; }
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+strong { color: var(--strong); }
+hr { border: 0; height: 2px; background: linear-gradient(90deg, var(--accent), transparent); margin: 2em 0; }
+img { max-width: 100%; break-inside: avoid; }
+li + li { margin-top: 0.2em; }
+li > p { margin: 0; }
+
+/* Highlight ==text== */
+mark { background: var(--mark-bg); color: var(--mark-fg); padding: 0 0.2em; border-radius: 3px; }
+
+/* Inline code */
+:not(pre) > code {
+  font: 0.88em var(--font-mono);
+  background: var(--code-inline-bg);
+  color: var(--code-inline-fg);
+  padding: 0.12em 0.4em;
+  border-radius: 4px;
+}
+
+/* Code blocks (Shiki sets its own colors inline) */
+pre.shiki {
+  font: 9pt/1.5 var(--font-mono);
+  padding: 0.9em 1.1em;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  white-space: pre-wrap;
+  word-break: break-word;
+  break-inside: avoid;
+}
+pre.shiki.plain { background: var(--code-bg); color: var(--fg); }
+pre.shiki code { font: inherit; background: none; padding: 0; }
+
+/* Blockquote */
+blockquote {
+  padding: 0.6em 1em;
+  border-left: 4px solid var(--accent);
+  background: var(--quote-bg);
+  color: var(--quote-fg);
+  border-radius: 0 6px 6px 0;
+}
+blockquote > :last-child { margin-bottom: 0; }
+
+/* Tables */
+table { border-collapse: collapse; width: 100%; font-size: 0.95em; break-inside: auto; }
+tr { break-inside: avoid; }
+th { background: var(--th-bg); color: var(--th-fg); text-align: left; }
+th, td { padding: 0.5em 0.8em; border: 1px solid var(--border); }
+tbody tr:nth-child(even) { background: var(--row-alt); }
+
+/* Task lists */
+.contains-task-list { list-style: none; padding-left: 1.2em; }
+.task-list-item input { margin: 0 0.5em 0 -1.2em; accent-color: var(--accent); }
+
+/* Callouts: > [!NOTE] etc. */
+.markdown-alert {
+  padding: 0.7em 1em;
+  margin: 0 0 1em;
+  border-left: 4px solid var(--alert);
+  background: color-mix(in srgb, var(--alert) 10%, var(--bg));
+  border-radius: 0 6px 6px 0;
+  break-inside: avoid;
+}
+.markdown-alert > :last-child { margin-bottom: 0; }
+.markdown-alert-title { display: flex; align-items: center; gap: 0.4em; font-weight: 700; color: var(--alert); margin-bottom: 0.3em; }
+.markdown-alert-title svg { fill: currentColor; }
+.markdown-alert-note { --alert: var(--blue); }
+.markdown-alert-tip { --alert: var(--green); }
+.markdown-alert-important { --alert: var(--purple); }
+.markdown-alert-warning { --alert: var(--orange); }
+.markdown-alert-caution { --alert: var(--red); }
+
+/* Colored text: {red}(text), [text]{.red} */
+.c-red, .red { color: var(--red); }
+.c-orange, .orange { color: var(--orange); }
+.c-yellow, .yellow { color: var(--yellow); }
+.c-green, .green { color: var(--green); }
+.c-teal, .teal { color: var(--teal); }
+.c-blue, .blue { color: var(--blue); }
+.c-purple, .purple { color: var(--purple); }
+.c-pink, .pink { color: var(--pink); }
+.c-gray, .gray { color: var(--gray); }
+.c-white { color: #fff; }
+.c-black { color: #111; }
+.bg-white { background: #fff; }
+.bg-black { background: #111; }
+.bg-red { background: var(--red); }
+.bg-orange { background: var(--orange); }
+.bg-yellow { background: var(--yellow); }
+.bg-green { background: var(--green); }
+.bg-teal { background: var(--teal); }
+.bg-blue { background: var(--blue); }
+.bg-purple { background: var(--purple); }
+.bg-pink { background: var(--pink); }
+.bg-gray { background: var(--gray); }
+.t-bg { padding: 0.05em 0.35em; border-radius: 4px; }
+.t-bold, .bold { font-weight: 700; }
+.t-italic, .italic { font-style: italic; }
+.t-underline, .underline { text-decoration: underline; text-decoration-thickness: 2px; }
+
+/* Mermaid */
+.mermaid-diagram { text-align: center; break-inside: avoid; }
+.mermaid-diagram svg { max-width: 100%; max-height: 170mm; height: auto; }
+.mermaid-error, pre.mermaid {
+  font: 9pt var(--font-mono);
+  white-space: pre-wrap;
+  color: var(--red);
+  border: 1px solid var(--red);
+  background: color-mix(in srgb, var(--red) 8%, var(--bg));
+  padding: 0.8em 1em;
+  border-radius: 6px;
+  margin: 0 0 1em;
+}
+
+/* Math */
+.katex-display { overflow: hidden; break-inside: avoid; }
+.katex { color: var(--math); }
+
+/* Table of contents */
+nav.toc, .toc {
+  background: var(--toc-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1em 1.4em;
+  margin: 0 0 2em;
+  break-after: page;
+}
+.toc::before { content: 'Contents'; display: block; font: 700 1.2em var(--font-heading); color: var(--h2); margin-bottom: 0.5em; }
+.toc ol { margin: 0; padding-left: 1.2em; }
+.toc > ol { padding-left: 0; list-style: none; }
+.toc > ol > li { font-weight: 600; margin-top: 0.4em; }
+.toc ol ol { font-weight: 400; list-style: none; }
+/* Entry: text, dotted leader, page number (filled in after a first print pass) */
+.toc a { display: flex; align-items: baseline; color: var(--fg); }
+.toc a::before { content: ''; order: 1; flex: 1; min-width: 1em; margin: 0 0.4em; border-bottom: 1px dotted var(--border); }
+.toc a::after { content: attr(data-page); order: 2; flex: 0 0 2.5em; text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; }
+
+/* Footnotes */
+.footnotes { font-size: 0.88em; color: var(--muted); }
+.footnotes-sep { border: 0; height: 1px; background: var(--border); }
